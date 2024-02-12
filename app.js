@@ -2,7 +2,6 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const passport = require('passport');
-const googleOauth = require('passport-google-oauth20');
 
 const app = express();
 
@@ -15,5 +14,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use('/', require('./server/routes/views'));
+app.use(require('./server/routes/auth'));
 
 module.exports = app;
