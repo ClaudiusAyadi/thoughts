@@ -1,6 +1,5 @@
-const { home, about, dashboard, settings } = require('../controllers/page');
-
 const router = require('express').Router();
+const { home, about, dashboard, settings } = require('../controllers/page');
 
 /**
  * @method GET /
@@ -10,13 +9,13 @@ router.route('/').get(home);
 
 /**
  * @method GET /
- * @route  '/about'
+ * @route  /about
  */
 router.route('/about').get(about);
 
 /**
  * @method GET /
- * @route  '/dashboard'
+ * @routes  /dashboard, /settings
  */
 router.route('/dashboard').get(dashboard);
 router.route('/settings').get(settings);
